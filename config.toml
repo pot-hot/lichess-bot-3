@@ -1,0 +1,49 @@
+token = "JINmY684XeLHOhQb"                                      # API token for Lichess
+botid = "brainleearn-dolegibot"                                 	# Id of the BOT (account write only in small letters)
+url = "https://lichess.org/api/"                                # URL for Lichess API 
+[engine]
+path = "./engines/BrainLearn12.1-x86-64-bmi2.exe"                # Path to UCI compatible engine "Stockfish"
+  [engine.options]						# UCI initialization commands supplied to the UCI engine
+  MoveOverhead = 10                                             # 
+  Debuglogfile = "./engines/STOCKFISH_13_DebugLog.txt"		# The path to the logic file for the chess engine
+  polyglot = true                                               # activate the book "Polyglot"
+  BookFile = "experience_book.bin"                              # debut book filename
+  OwnBook = true						# Incorporating your own chess engine book. The Lichess-bot will not open and submit the opening book ..
+  SlowMover = 10
+  SkillLevel = 20						# The power or level of the Stockfish game. 
+  Evalfile = "nn-62ef826d1a6d.nnue"				# A neural network file for a chess engine Stockfish
+  MultiPV = 1 							# Number of out moves ... 
+  Ponder = true                                                 # ponder
+  Threads = 4                                                  # The maximum number of CPU threads that the engine can use
+  Hash = 256                                                   # Maximum memory (in megabytes) that the engine can allocate
+  UCI_Chess960 = true						# Turn on the engine to play Chess960
+  UCI_Elo = 2850                                       		# Elo level of the chess engine ... 2850 maximum value.
+  UCI_LimitStrenght = false					# Whether to limit the power of the chess engine.
+  UCI_ShowWDL = false						#
+  SyzygyPath = "./syzygy/"					# The path to endgame bases.
+  SyzygyProbeDepth = 1
+  Syzygy50MoveRule = true
+  SyzygyProbeLimit = 7
+  Contempt = 24
+  uci_ponder = true						# Think over the opponent's move and give out ...
+  [engine.go]							# Commands given through the UCI interface.. (uci go)
+   nodes = 200366014                                            # Search number of nodes only
+   depth = 245                                                  # Search depth limit
+   movetime = 7000                                              # Move time limit in milliseconds
+  [network]
+latency = 100                                                   # Estimated network latency when sending requests in milliseconds
+  [challenge]
+variants = [                                                    # Variants engine supports
+  "standard",
+  "chess960"
+]
+speeds = [                                                      # Speeds to play at
+  "blitz",
+  "bullet",
+  "rapid",
+  "classical"
+]
+modes = [                                                       # Modes to play. Must be "rated" and/or "casual"
+  "rated",
+  "casual"
+]
