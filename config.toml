@@ -2,7 +2,7 @@ token = "htpnZMTnuWr7Fz6S"                                      # API token for 
 botid = "chessmagicionbot"                                 	# Id of the BOT (account write only in small letters)
 url = "https://lichess.org/api/"                                # URL for Lichess API 
 [engine]
-path = "./engines/BrainLearn12.1-x86-64-bmi2.exe"                # Path to UCI compatible engine "Stockfish"
+path = "./engines/engine/stockfishmodern"                # Path to UCI compatible engine "Stockfish"
   [engine.options]						# UCI initialization commands supplied to the UCI engine
   MoveOverhead = 10                                             # 
   Debuglogfile = "./engines/STOCKFISH_13_DebugLog.txt"		# The path to the logic file for the chess engine
